@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MyReceipts</string>
+    <string name="receipt_title">Квитанция ЖКХ</string>
+    <string name="receipt_date">Ноябрь 2026 · кв. 34</string>
+    <string name="service_heating">Отопление</string>
+    <string name="service_water">Вода</string>
+    <string name="service_electricity">Электричество</string>
+    <string name="service_other">Газ и остальное</string>
+    <string name="service_light_gas_other">Свет, газ и др.</string>
+    <string name="amount_heating">1 580 ₽</string>
+    <string name="amount_water">950 ₽</string>
+    <string name="amount_electricity">780 ₽</string>
+    <string name="amount_other">1 340 ₽</string>
+    <string name="amount_total">4 650 ₽</string>
+    <string name="amount_analytics_other">2 120 ₽</string>
+    <string name="receipt_total">Итого</string>
+    <string name="payment_not_missed">Оплата не пропущена</string>
+    <string name="welcome_title">Все квитанции ЖКХ\nв одном месте</string>
+    <string name="welcome_description">Фотографируйте, смотрите суммы по услугам и не забывайте про оплату. Мы напомним.</string>
+    <string name="create_account">Создать аккаунт</string>
+    <string name="already_have_account">У меня уже есть аккаунт</string>
+    <string name="skip">Пропустить</string>
+    <string name="onboarding_receipt_title">Сфотографируйте\nквитанцию</string>
+    <string name="onboarding_receipt_description">Мы сами найдём суммы по каждой услуге и срок оплаты. Вводить ничего не нужно.</string>
+    <string name="onboarding_analytics_month">Ноябрь, к оплате</string>
+    <string name="onboarding_analytics_title">Понимайте,\nза что платите</string>
+    <string name="onboarding_analytics_description">Сколько уходит на отопление, воду и свет.\nБез сложных таблиц.</string>
+    <string name="next">Дальше</string>
+</resources>

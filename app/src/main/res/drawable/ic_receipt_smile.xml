@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/dp_22"
+    android:height="@dimen/dp_32"
+    android:viewportWidth="44"
+    android:viewportHeight="64">
+    <!-- корпус квитанции с зубчатым краем -->
+    <path
+        android:fillColor="@color/button_mint"
+        android:pathData="M6,0 H44 V58 L36,64 L28,58 L20,64 L12,58 L4,64 L0,60 V8 Q0,0 6,0 Z" />
+    <!-- глаза -->
+    <path
+        android:fillColor="@color/ink"
+        android:pathData="M13,22 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    <path
+        android:fillColor="@color/ink"
+        android:pathData="M31,22 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    <!-- улыбка -->
+    <path
+        android:pathData="M13,33 Q22,43 31,33"
+        android:strokeColor="@color/ink"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+</vector>

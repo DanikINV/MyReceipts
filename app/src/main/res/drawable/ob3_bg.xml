@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/welcome_background" />
+        </shape>
+    </item>
+    <!-- бирюзовое свечение сверху-справа -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.93"
+                android:centerY="0.15"
+                android:endColor="@color/welcome_glow_transparent"
+                android:gradientRadius="55%p"
+                android:startColor="@color/welcome_glow"
+                android:type="radial" />
+        </shape>
+    </item>
+    <!-- розоватое пятно снизу-слева -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.23"
+                android:centerY="0.74"
+                android:endColor="@color/welcome_rose_transparent"
+                android:gradientRadius="50%p"
+                android:startColor="@color/analytics_rose"
+                android:type="radial" />
+        </shape>
+    </item>
+</layer-list>

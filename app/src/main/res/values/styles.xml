@@ -1,0 +1,85 @@
+<resources>
+    <style name="MyReceiptsTextHeadline">
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_34</item>
+    </style>
+
+    <style name="MyReceiptsTextBody">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="MyReceiptsTextBodyLabel">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="MyReceiptsTextBodyLabelBold">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="MyReceiptsTextButton">
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+    </style>
+
+    <style name="MyReceiptsTextSecondaryAction">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textColor">@color/muted_dark</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="MyReceiptsTextReceiptTitle">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_21</item>
+    </style>
+
+    <style name="MyReceiptsTextReceiptDate">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textColor">@color/receipt_muted</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+    </style>
+
+    <style name="MyReceiptsTextChip">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+    </style>
+
+    <style name="MyReceiptsTextReceiptLine">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+    </style>
+
+    <style name="MyReceiptsTextReceiptTotal">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_28</item>
+    </style>
+
+    <style name="MyReceiptsTextReceiptTotalLabel">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+    </style>
+
+    <style name="MyReceiptsTextAnalyticsLabel">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/analytics_muted</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <style name="MyReceiptsTextAnalyticsTotal">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">@dimen/sp_32</item>
+    </style>
+</resources>

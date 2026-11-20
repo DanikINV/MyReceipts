@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ob3_bg"
+    tools:context=".OnboardingAnalyticsActivity">
+
+    <!--Пропустить-->
+
+    <!--Карточка со статистикой-->
+<TextView
+    style="@style/MyReceiptsTextSecondaryAction"
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/dp_8"
+        android:text="@string/skip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <!--Заголовок-->
+    <FrameLayout
+        android:id="@+id/statsCard"
+        android:layout_width="@dimen/dp_290"
+        android:layout_height="@dimen/dp_279"
+        android:layout_marginTop="@dimen/dp_108"
+        android:background="@drawable/ob3_card"
+        android:elevation="@dimen/dp_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/MyReceiptsTextAnalyticsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_24"
+            android:text="@string/onboarding_analytics_month"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/MyReceiptsTextAnalyticsTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_42"
+            android:text="@string/amount_total"
+            tools:ignore="HardcodedText" />
+
+        <!--Кольцевая диаграмма-->
+        <ImageView
+            android:layout_width="@dimen/dp_104"
+            android:layout_height="@dimen/dp_104"
+            android:layout_marginStart="@dimen/dp_153"
+            android:layout_marginTop="@dimen/dp_42"
+            android:src="@drawable/ob3_donut"
+            tools:ignore="ContentDescription" />
+
+        <!--Легенда-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_176"
+            android:layout_marginEnd="@dimen/dp_26"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_29"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@drawable/ob3_dot_teal" />
+
+                <TextView
+                    style="@style/MyReceiptsTextBodyLabel"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:text="@string/service_heating"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextBodyLabelBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_heating"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_29"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@drawable/ob3_dot_pink" />
+
+                <TextView
+                    style="@style/MyReceiptsTextBodyLabel"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:text="@string/service_water"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextBodyLabelBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_water"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_29"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@drawable/ob3_dot_dark" />
+
+                <TextView
+                    style="@style/MyReceiptsTextBodyLabel"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:text="@string/service_light_gas_other"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextBodyLabelBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_analytics_other"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        style="@style/MyReceiptsTextHeadline"
+        android:id="@+id/tvTitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:lineSpacingExtra="@dimen/dp_minus_6"
+        android:text="@string/onboarding_analytics_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statsCard"
+        tools:ignore="HardcodedText" />
+
+    <!--Подзаголовок-->
+<TextView
+    style="@style/MyReceiptsTextBody"
+        android:id="@+id/tvSubtitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:lineSpacingExtra="@dimen/dp_2"
+        android:text="@string/onboarding_analytics_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        tools:ignore="HardcodedText" />
+
+    <!--Индикатор страниц-->
+    <LinearLayout
+        android:id="@+id/pageIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="@dimen/dp_8"
+            android:layout_height="@dimen/dp_8"
+            android:background="@drawable/ob3_indicator_inactive" />
+
+        <View
+            android:layout_width="@dimen/dp_26"
+            android:layout_height="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:background="@drawable/ob3_indicator_active" />
+
+        <View
+            android:layout_width="@dimen/dp_8"
+            android:layout_height="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:background="@drawable/ob3_indicator_inactive" />
+    </LinearLayout>
+
+    <!--Кнопка «Дальше»-->
+<androidx.appcompat.widget.AppCompatButton
+    style="@style/MyReceiptsTextButton"
+        android:id="@+id/btnNext"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:layout_marginBottom="@dimen/dp_34"
+        android:background="@drawable/ob3_button"
+        android:elevation="@dimen/dp_6"
+        android:stateListAnimator="@null"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

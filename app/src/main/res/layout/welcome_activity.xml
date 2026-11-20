@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcome_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_welcome"
+    tools:context=".WelcomeActivity">
+
+    <!--Иллюстрация: карточка квитанции-->
+    <FrameLayout
+        android:id="@+id/illustration"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_425"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Карточка-->
+        <LinearLayout
+            android:id="@+id/receiptCard"
+            android:layout_width="@dimen/dp_272"
+            android:layout_height="@dimen/dp_292"
+            android:layout_marginStart="@dimen/dp_52"
+            android:layout_marginTop="@dimen/dp_70"
+            android:background="@drawable/bg_card"
+            android:elevation="@dimen/dp_10"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_26"
+            android:paddingTop="@dimen/dp_26"
+            android:paddingEnd="@dimen/dp_22"
+            android:rotation="-5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_32"
+                    android:src="@drawable/ic_receipt_smile"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_14"
+                    android:text="@string/receipt_title"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/MyReceiptsTextReceiptDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/receipt_date"
+                tools:ignore="HardcodedText" />
+
+            <!--Строки услуг-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginTop="@dimen/dp_14"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/service_heating"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_heating"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_32"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/service_water"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_water"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_32"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/service_electricity"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_electricity"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_32"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/service_other"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_other"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <!--Разделитель-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/receipt_divider" />
+
+            <!--Итого-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptTotalLabel"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/receipt_total"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/MyReceiptsTextReceiptTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount_total"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Кнопка-камера-->
+        <FrameLayout
+            android:layout_width="@dimen/dp_64"
+            android:layout_height="@dimen/dp_64"
+            android:layout_marginStart="@dimen/dp_289"
+            android:layout_marginTop="@dimen/dp_66"
+            android:background="@drawable/bg_circle_white"
+            android:elevation="@dimen/dp_14">
+
+            <ImageView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_camera"
+                tools:ignore="ContentDescription" />
+        </FrameLayout>
+
+        <!--Плашка «Оплата не пропущена»-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginStart="@dimen/dp_145"
+            android:layout_marginTop="@dimen/dp_354"
+            android:background="@drawable/bg_chip"
+            android:elevation="@dimen/dp_16"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_11"
+            android:paddingEnd="@dimen/dp_22"
+            android:rotation="4">
+
+            <FrameLayout
+                android:layout_width="@dimen/dp_34"
+                android:layout_height="@dimen/dp_34"
+                android:background="@drawable/bg_circle_teal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_18"
+                    android:layout_height="@dimen/dp_18"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_check"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <TextView
+                style="@style/MyReceiptsTextChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:text="@string/payment_not_missed"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!--Заголовок-->
+<TextView
+    style="@style/MyReceiptsTextHeadline"
+        android:id="@+id/tvTitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_2"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:lineSpacingExtra="@dimen/dp_2"
+        android:text="@string/welcome_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/illustration"
+        tools:ignore="HardcodedText" />
+
+    <!--Подзаголовок-->
+<TextView
+    style="@style/MyReceiptsTextBody"
+        android:id="@+id/tvSubtitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_14"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:lineSpacingExtra="@dimen/dp_6"
+        android:text="@string/welcome_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        tools:ignore="HardcodedText" />
+
+    <!--Кнопка «Создать аккаунт»-->
+
+    <!--«У меня уже есть аккаунт»-->
+<androidx.appcompat.widget.AppCompatButton
+    style="@style/MyReceiptsTextButton"
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:background="@drawable/bg_button_primary"
+        android:elevation="@dimen/dp_6"
+        android:stateListAnimator="@null"
+        android:text="@string/create_account"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@id/btnHaveAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        style="@style/MyReceiptsTextSecondaryAction"
+        android:id="@+id/btnHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_24"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/dp_8"
+        android:text="@string/already_have_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/dp_104"
+    android:height="@dimen/dp_104"
+    android:viewportWidth="104"
+    android:viewportHeight="104">
+    <!-- светлая подложка кольца -->
+    <path
+        android:pathData="M52,8 A44,44 0 1,1 51.99,8"
+        android:strokeColor="@color/donut_track"
+        android:strokeWidth="16" />
+    <path
+        android:pathData="M55.07,8.11 A44,44 0 0,1 76.60,88.48"
+        android:strokeColor="@color/donut_teal"
+        android:strokeLineCap="round"
+        android:strokeWidth="16" />
+    <path
+        android:pathData="M62.64,94.69 A44,44 0 0,1 8.11,55.07"
+        android:strokeColor="@color/donut_pink"
+        android:strokeLineCap="round"
+        android:strokeWidth="16" />
+    <path
+        android:pathData="M9.80,39.60 A44,44 0 0,1 39.60,9.80"
+        android:strokeColor="@color/donut_dark"
+        android:strokeLineCap="round"
+        android:strokeWidth="16" />
+</vector>
