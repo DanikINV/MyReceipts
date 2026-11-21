@@ -82,4 +82,18 @@
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_32</item>
     </style>
+    <style name="MR.Text" parent="">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="MR.Text.CardTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/mr_text_primary</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:fontFamily">@font/nunito_semibold</item>
+    </style>
+    <style name="MR.Text.CardSubtitle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/mr_text_secondary</item>
+    </style>
 </resources>

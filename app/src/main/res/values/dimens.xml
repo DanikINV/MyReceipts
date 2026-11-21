@@ -59,4 +59,9 @@
     <dimen name="sp_28">28sp</dimen>
     <dimen name="sp_32">32sp</dimen>
     <dimen name="sp_34">34sp</dimen>
+    <dimen name="card_radius">28dp</dimen>
+    <dimen name="card_height">82dp</dimen>
+    <dimen name="tile_size">44dp</dimen>
+    <dimen name="tile_radius">16dp</dimen>
+
 </resources>

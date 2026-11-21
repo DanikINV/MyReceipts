@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <gradient android:type="radial" android:centerX="0.5" android:centerY="0.5"
+        android:gradientRadius="211dp"
+        android:startColor="@color/mr_blob_turquoise_strong_start"
+        android:endColor="@color/mr_blob_turquoise_end" />
+</shape>

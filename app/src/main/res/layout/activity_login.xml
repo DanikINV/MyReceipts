@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Экран «Вход» (макет 390 × 844 dp). Размытие фона в XML недоступно,
+    «стекло» собрано из полупрозрачной заливки, светлой обводки и тени.
+    Включите edge-to-edge, иначе верх сдвинется на высоту статус-бара.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mr_bg"
+    android:clipChildren="true"
+    tools:context=".LoginActivity">
+
+    <!-- Цветные пятна -->
+    <View
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="-100dp"
+        android:background="@drawable/bg_blob_pink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:layout_marginStart="-120dp"
+        android:layout_marginTop="520dp"
+        android:background="@drawable/bg_blob_mint_soft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Назад -->
+    <FrameLayout
+        android:id="@+id/btnBack"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/bg_glass_circle"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_back" />
+    </FrameLayout>
+
+    <!-- Логотип -->
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/cd_logo"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:letterSpacing="-0.006"
+        android:text="@string/login_title"
+        android:textColor="@color/mr_text_primary"
+        android:textSize="34sp"
+        app:lineHeight="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/login_subtitle"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="16sp"
+        app:lineHeight="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblEmail"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="262dp"
+        android:fontFamily="@font/nunito_medium"
+        android:text="@string/login_label_email"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fieldEmail"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_field"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fieldEmailIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="19dp"
+            android:contentDescription="@string/cd_icon_mail"
+            android:src="@drawable/ic_mail_muted"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/MR.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:autofillHints="emailAddress"
+            android:background="@null"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:padding="0dp"
+            android:text="@string/login_email_sample"
+            android:textColor="@color/mr_text_primary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fieldEmailIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/lblPassword"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="362dp"
+        android:fontFamily="@font/nunito_medium"
+        android:text="@string/login_label_password"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fieldPassword"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_field"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fieldPasswordIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="19dp"
+            android:contentDescription="@string/cd_icon_lock"
+            android:src="@drawable/ic_lock_active"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivTogglePassword"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="19dp"
+            android:contentDescription="@string/cd_show_password"
+            android:src="@drawable/ic_eye"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/MR.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:maxLines="1"
+            android:padding="0dp"
+            android:text="@string/login_password_sample"
+            android:textColor="@color/mr_text_primary"
+            android:textSize="16sp"
+            android:letterSpacing="0.19"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivTogglePassword"
+            app:layout_constraintStart_toEndOf="@id/fieldPasswordIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Забыла пароль? -->
+    <TextView
+        android:id="@+id/tvForgot"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="458dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/login_forgot_password"
+        android:textColor="@color/mr_link"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Войти -->
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="501dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/ripple_button_primary"
+        android:elevation="6dp"
+        android:fontFamily="@font/nunito_bold"
+        android:outlineAmbientShadowColor="@color/mr_button_shadow"
+        android:outlineSpotShadowColor="@color/mr_button_shadow"
+        android:stateListAnimator="@null"
+        android:text="@string/login_button"
+        android:textAllCaps="false"
+        android:textColor="@color/mr_text_on_button"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- или -->
+    <TextView
+        android:id="@+id/tvOr"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="575dp"
+        android:text="@string/login_or"
+        android:textColor="@color/mr_hint"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_divider"
+        app:layout_constraintBottom_toBottomOf="@id/tvOr"
+        app:layout_constraintEnd_toStartOf="@id/tvOr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvOr" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_divider"
+        app:layout_constraintBottom_toBottomOf="@id/tvOr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvOr"
+        app:layout_constraintTop_toTopOf="@id/tvOr" />
+
+    <!-- Яндекс -->
+    <Button
+        android:id="@+id/btnYandex"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="611dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_button_glass"
+        android:elevation="4dp"
+        android:fontFamily="@font/nunito_bold"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        android:stateListAnimator="@null"
+        android:text="@string/login_yandex"
+        android:textAllCaps="false"
+        android:textColor="@color/mr_text_primary"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Внизу: «Вы здесь впервые? Создать аккаунт» -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            style="@style/MR.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_no_account"
+            android:textColor="@color/mr_text_secondary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvCreateAccount"
+            style="@style/MR.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:text="@string/login_create_account"
+            android:textColor="@color/mr_link"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

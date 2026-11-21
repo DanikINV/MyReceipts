@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Экран «Регистрация» (макет 390 × 844 dp).
+    Отступы взяты из макета. Размытие фона (backdrop-blur) в XML недоступно,
+    поэтому «стекло» собрано из полупрозрачной заливки, светлой обводки и тени.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mr_bg"
+    android:clipChildren="true"
+    tools:context=".RegisterActivity">
+
+    <!-- Цветные пятна -->
+    <View
+        android:id="@+id/blobTop"
+        android:layout_width="440dp"
+        android:layout_height="440dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="-90dp"
+        android:background="@drawable/bg_blob_turquoise_strong"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/blobBottom"
+        android:layout_width="380dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="-180dp"
+        android:background="@drawable/bg_blob_mint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Назад -->
+    <FrameLayout
+        android:id="@+id/btnBack"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_glass_circle"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_back" />
+    </FrameLayout>
+
+    <!-- Логотип -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/cd_logo"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Заголовок -->
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:letterSpacing="-0.006"
+        android:text="@string/register_title"
+        android:textColor="@color/mr_text_primary"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineHeight="40sp" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/register_subtitle"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineHeight="24sp" />
+
+    <TextView
+        android:id="@+id/lblName"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="204dp"
+        android:fontFamily="@font/nunito_medium"
+        android:text="@string/register_label_name"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fieldName"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_field"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fieldNameIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="19dp"
+            android:contentDescription="@string/cd_icon_user"
+            android:src="@drawable/ic_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etName"
+            style="@style/MR.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:autofillHints="name"
+            android:background="@null"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:padding="0dp"
+            android:text="@string/register_name_sample"
+            android:textColor="@color/mr_text_primary"
+            android:textColorHint="@color/mr_hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fieldNameIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/lblEmail"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="300dp"
+        android:fontFamily="@font/nunito_medium"
+        android:text="@string/register_label_email"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fieldEmail"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="24dp"
+        android:elevation="4dp"
+        android:background="@drawable/bg_field"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fieldEmailIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="19dp"
+            android:contentDescription="@string/cd_icon_mail"
+            android:src="@drawable/ic_mail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/MR.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:autofillHints="emailAddress"
+            android:background="@null"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:padding="0dp"
+            android:text="@string/register_email_sample"
+            android:textColor="@color/mr_text_primary"
+            android:textColorHint="@color/mr_hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fieldEmailIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/lblPassword"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="392dp"
+        android:fontFamily="@font/nunito_medium"
+        android:text="@string/register_label_password"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fieldPassword"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_field"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fieldPasswordIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="19dp"
+            android:contentDescription="@string/cd_icon_lock"
+            android:src="@drawable/ic_lock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivTogglePassword"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="19dp"
+            android:contentDescription="@string/cd_show_password"
+            android:src="@drawable/ic_eye"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/MR.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:autofillHints="password"
+            android:background="@null"
+            android:hint="@string/register_password_hint"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="0dp"
+            android:textColor="@color/mr_text_primary"
+            android:textColorHint="@color/mr_hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivTogglePassword"
+            app:layout_constraintStart_toEndOf="@id/fieldPasswordIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Создать аккаунт -->
+
+    <TextView
+        android:id="@+id/tvPasswordHelper"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/register_password_helper"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineHeight="18sp" />
+
+    <!-- Разделитель «или» -->
+    <Button
+        android:id="@+id/btnCreate"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/ripple_button_primary"
+        android:elevation="6dp"
+        android:fontFamily="@font/nunito_bold"
+        android:outlineAmbientShadowColor="@color/mr_button_shadow"
+        android:outlineSpotShadowColor="@color/mr_button_shadow"
+        android:stateListAnimator="@null"
+        android:text="@string/register_create_account"
+        android:textAllCaps="false"
+        android:textColor="@color/mr_text_on_button"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOr"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="580dp"
+        android:text="@string/register_or"
+        android:textColor="@color/mr_hint"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_divider"
+        app:layout_constraintBottom_toBottomOf="@id/tvOr"
+        app:layout_constraintEnd_toStartOf="@id/tvOr"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvOr"
+        app:layout_constraintVertical_bias="0.588" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_divider"
+        app:layout_constraintBottom_toBottomOf="@id/tvOr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvOr"
+        app:layout_constraintTop_toTopOf="@id/tvOr" />
+
+    <!-- Яндекс -->
+
+    <!-- Условия (ссылки красятся в RegisterActivity.kt) -->
+
+    <Button
+        android:id="@+id/btnYandex"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="604dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_button_glass"
+        android:elevation="4dp"
+        android:fontFamily="@font/nunito_bold"
+        android:outlineAmbientShadowColor="@color/mr_glass_shadow"
+        android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        android:stateListAnimator="@null"
+        android:text="@string/register_yandex"
+        android:textAllCaps="false"
+        android:textColor="@color/mr_text_primary"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTerms"
+        style="@style/MR.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="674dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center_horizontal"
+        android:text="@string/register_terms"
+        android:textColor="@color/mr_text_secondary"
+        android:textSize="13sp"
+        app:lineHeight="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
