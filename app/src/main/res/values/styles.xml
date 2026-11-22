@@ -4,79 +4,66 @@
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_34</item>
     </style>
-
     <style name="MyReceiptsTextBody">
         <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:textColor">@color/muted</item>
         <item name="android:textSize">@dimen/sp_16</item>
     </style>
-
     <style name="MyReceiptsTextBodyLabel">
         <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_16</item>
     </style>
-
     <style name="MyReceiptsTextBodyLabelBold">
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_16</item>
     </style>
-
     <style name="MyReceiptsTextButton">
         <item name="android:fontFamily">@font/nunito_extrabold</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_17</item>
     </style>
-
     <style name="MyReceiptsTextSecondaryAction">
         <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:textColor">@color/muted_dark</item>
         <item name="android:textSize">@dimen/sp_16</item>
     </style>
-
     <style name="MyReceiptsTextReceiptTitle">
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_21</item>
     </style>
-
     <style name="MyReceiptsTextReceiptDate">
         <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:textColor">@color/receipt_muted</item>
         <item name="android:textSize">@dimen/sp_15</item>
     </style>
-
     <style name="MyReceiptsTextChip">
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_15</item>
     </style>
-
     <style name="MyReceiptsTextReceiptLine">
         <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_17</item>
     </style>
-
     <style name="MyReceiptsTextReceiptTotal">
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_28</item>
     </style>
-
     <style name="MyReceiptsTextReceiptTotalLabel">
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:textSize">@dimen/sp_17</item>
     </style>
-
     <style name="MyReceiptsTextAnalyticsLabel">
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/analytics_muted</item>
         <item name="android:textSize">@dimen/sp_14</item>
     </style>
-
     <style name="MyReceiptsTextAnalyticsTotal">
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/ink</item>
@@ -95,5 +82,131 @@
     <style name="MR.Text.CardSubtitle">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/mr_text_secondary</item>
+    </style>
+    <style name="Text.Timer" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/text_timer</item>
+        <item name="android:textColor">@color/analytics_muted</item>
+    </style>
+    <style name="Text.LinkAccent" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/text_accent</item>
+    </style>
+    <style name="CodeCell" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_code_cell</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/text_code</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:inputType">number</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+    <style name="RoundButton">
+        <item name="android:layout_width">@dimen/round_button_size</item>
+        <item name="android:layout_height">@dimen/round_button_size</item>
+        <item name="android:background">@drawable/bg_verify_circle</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+    <style name="VerifyPrimaryButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_verify_button</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">@dimen/dp_6</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="HomeTextAddress">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextTitle">
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textSize">@dimen/sp_28</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextHeroLabel">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/home_hero_label</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextDue">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/home_due_text</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextHeroAmount">
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textSize">@dimen/sp_36</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextCardTitle">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextCardSubtitle">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextSectionTitle">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextSectionNote">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextMonth">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextPaid">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/teal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextNavActive">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/teal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomeTextNavInactive">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/home_nav_inactive</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HomePrimaryButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_home_button</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">@dimen/dp_6</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 </resources>

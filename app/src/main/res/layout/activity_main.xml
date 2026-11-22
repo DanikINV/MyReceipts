@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screens"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:measureAllChildren="false">
+
+    <include layout="@layout/welcome_activity" />
+
+    <include layout="@layout/activity_onboarding" />
+
+    <include layout="@layout/activity_onboarding_analytics" />
+
+    <include layout="@layout/activity_onboarding3" />
+
+    <include layout="@layout/activity_home" />
+
+    <include layout="@layout/activity_login" />
+
+    <include layout="@layout/activity_register" />
+
+</ViewFlipper>

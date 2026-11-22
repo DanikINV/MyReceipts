@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="20dp" android:height="20dp"
-    android:viewportWidth="24" android:viewportHeight="24">
-    <path android:pathData="M7 5h10a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4z M4 8l8 6 8-6"
-        android:strokeColor="@color/mr_icon_active" android:strokeWidth="1.8"
-        android:strokeLineCap="round" android:strokeLineJoin="round" />
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <!-- конверт -->
+    <path
+        android:pathData="M8,6 H24 A4.5,4.5 0 0,1 28.5,10.5 V21.5 A4.5,4.5 0 0,1 24,26 H8 A4.5,4.5 0 0,1 3.5,21.5 V10.5 A4.5,4.5 0 0,1 8,6 Z"
+        android:strokeColor="@color/text_accent"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.8" />
+    <!-- клапан -->
+    <path
+        android:pathData="M6,10.5 L16,18 L26,10.5"
+        android:strokeColor="@color/text_accent"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.8" />
 </vector>

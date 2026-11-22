@@ -98,7 +98,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:text="@string/register_subtitle"
         android:textColor="@color/mr_text_secondary"
@@ -106,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
         app:lineHeight="24sp" />
 
     <TextView
@@ -115,20 +115,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="20dp"
+        android:labelFor="@id/etName"
         android:fontFamily="@font/nunito_medium"
         android:text="@string/register_label_name"
         android:textColor="@color/mr_text_secondary"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fieldName"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_field"
         android:elevation="4dp"
@@ -137,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/lblName">
 
         <ImageView
             android:id="@+id/fieldNameIcon"
@@ -159,16 +160,17 @@
             android:layout_marginEnd="8dp"
             android:autofillHints="name"
             android:background="@null"
+            android:contentDescription="@string/cd_input_name"
             android:imeOptions="actionNext"
             android:inputType="textPersonName"
             android:maxLines="1"
             android:padding="0dp"
-            android:text="@string/register_name_sample"
+            android:hint="@string/register_name_sample"
             android:textColor="@color/mr_text_primary"
             android:textColorHint="@color/mr_hint"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fieldNameIcon"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -179,20 +181,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="12dp"
+        android:labelFor="@id/etEmail"
         android:fontFamily="@font/nunito_medium"
         android:text="@string/register_label_email"
         android:textColor="@color/mr_text_secondary"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/fieldName" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fieldEmail"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:elevation="4dp"
         android:background="@drawable/bg_field"
@@ -201,7 +204,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/lblEmail">
 
         <ImageView
             android:id="@+id/fieldEmailIcon"
@@ -223,16 +226,17 @@
             android:layout_marginEnd="8dp"
             android:autofillHints="emailAddress"
             android:background="@null"
+            android:contentDescription="@string/cd_input_email"
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:padding="0dp"
-            android:text="@string/register_email_sample"
+            android:hint="@string/register_email_sample"
             android:textColor="@color/mr_text_primary"
             android:textColorHint="@color/mr_hint"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fieldEmailIcon"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -243,20 +247,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="12dp"
+        android:labelFor="@id/etPassword"
         android:fontFamily="@font/nunito_medium"
         android:text="@string/register_label_password"
         android:textColor="@color/mr_text_secondary"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/fieldEmail" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fieldPassword"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="416dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_field"
         android:elevation="4dp"
@@ -265,7 +270,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/lblPassword">
 
         <ImageView
             android:id="@+id/fieldPasswordIcon"
@@ -283,7 +288,9 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="19dp"
+            android:clickable="true"
             android:contentDescription="@string/cd_show_password"
+            android:focusable="true"
             android:src="@drawable/ic_eye"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -298,6 +305,7 @@
             android:layout_marginEnd="8dp"
             android:autofillHints="password"
             android:background="@null"
+            android:contentDescription="@string/cd_input_password"
             android:hint="@string/register_password_hint"
             android:imeOptions="actionNext"
             android:inputType="textPassword"
@@ -320,7 +328,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
         android:text="@string/register_password_helper"
         android:textColor="@color/mr_text_secondary"
@@ -328,7 +336,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fieldPassword"
         app:lineHeight="18sp" />
 
     <!-- Разделитель «или» -->
@@ -338,7 +346,7 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/ripple_button_primary"
         android:elevation="6dp"
@@ -354,20 +362,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvPasswordHelper" />
 
     <TextView
         android:id="@+id/tvOr"
         style="@style/MR.Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="14dp"
         android:text="@string/register_or"
         android:textColor="@color/mr_hint"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btnCreate" />
 
     <View
         android:layout_width="0dp"
@@ -403,7 +411,7 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="604dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_button_glass"
         android:elevation="4dp"
@@ -419,7 +427,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvOr" />
 
     <TextView
         android:id="@+id/tvTerms"
@@ -427,7 +435,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="674dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="30dp"
         android:gravity="center_horizontal"
         android:text="@string/register_terms"
@@ -436,6 +444,22 @@
         app:lineHeight="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btnYandex" />
+
+    <TextView
+        android:id="@+id/tvHaveAccount"
+        style="@style/MR.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/register_have_account"
+        android:textColor="@color/mr_link"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,16 +57,20 @@
     <!-- Карточка 2 (сдвинута вправо) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card1"
-        android:layout_width="304dp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/card_height"
         android:layout_marginStart="40dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/bg_glass_card"
         android:elevation="6dp"
         android:outlineAmbientShadowColor="@color/mr_glass_shadow"
         android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="304dp">
 
         <FrameLayout
             android:id="@+id/tile1"
@@ -112,16 +116,20 @@
     <!-- Карточка 3 (уже на 10 dp) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card2"
-        android:layout_width="304dp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/card_height"
         android:layout_marginStart="56dp"
         android:layout_marginTop="208dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/bg_glass_card"
         android:elevation="6dp"
         android:outlineAmbientShadowColor="@color/mr_glass_shadow"
         android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="304dp">
 
         <FrameLayout
             android:id="@+id/tile2"
@@ -167,16 +175,20 @@
     <!-- Заголовок -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card3"
-        android:layout_width="294dp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/card_height"
         android:layout_marginStart="32dp"
         android:layout_marginTop="312dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/bg_glass_card"
         android:elevation="6dp"
         android:outlineAmbientShadowColor="@color/mr_glass_shadow"
         android:outlineSpotShadowColor="@color/mr_glass_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="294dp">
 
         <FrameLayout
             android:id="@+id/tile3"
@@ -271,17 +283,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <View
+            android:id="@+id/dot0"
             android:layout_width="8dp"
             android:layout_height="8dp"
             android:background="@drawable/bg_dot_inactive" />
 
         <View
+            android:id="@+id/dot1"
             android:layout_width="8dp"
             android:layout_height="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/bg_dot_inactive" />
 
         <View
+            android:id="@+id/dot2"
             android:layout_width="26dp"
             android:layout_height="8dp"
             android:layout_marginStart="8dp"

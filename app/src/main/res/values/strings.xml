@@ -17,6 +17,7 @@
     <string name="payment_not_missed">Оплата не пропущена</string>
     <string name="welcome_title">Все квитанции ЖКХ\nв одном месте</string>
     <string name="welcome_description">Фотографируйте, смотрите суммы по услугам и не забывайте про оплату. Мы напомним.</string>
+    <string name="welcome_start">Продолжить</string>
     <string name="create_account">Создать аккаунт</string>
     <string name="already_have_account">У меня уже есть аккаунт</string>
     <string name="skip">Пропустить</string>
@@ -49,6 +50,7 @@
     <string name="register_password_hint">Минимум 8 символов</string>
     <string name="register_password_helper">Придумайте что-то, что легко запомнится.</string>
     <string name="register_create_account">Создать аккаунт</string>
+    <string name="register_have_account">Уже есть аккаунт? Войти</string>
     <string name="register_or">или</string>
     <string name="register_yandex">Яндекс</string>
     <string name="register_terms">
@@ -59,7 +61,11 @@
 </string>
     <string name="cd_back">Назад</string>
     <string name="cd_logo">Логотип MeReceipts</string>
-    <string name="cd_show_password">Показать пароль</string>
+    <string name="cd_show_password">Показать пароль, поле %1$s</string>
+    <string name="cd_hide_password">Скрыть пароль, поле %1$s</string>
+    <string name="cd_input_name">Поле ввода имени</string>
+    <string name="cd_input_email">Поле ввода электронной почты</string>
+    <string name="cd_input_password">Поле ввода пароля</string>
     <string name="cd_icon_user">Имя</string>
     <string name="cd_icon_mail">Почта</string>
     <string name="cd_icon_lock">Пароль</string>
@@ -78,7 +84,39 @@
     <string name="forgot_title">Ничего страшного,\nс каждым бывает</string>
     <string name="forgot_subtitle">Напишите почту, и мы пришлём ссылку, чтобы придумать новый пароль.</string>
     <string name="forgot_label_email">Почта</string>
-    <string name="forgot_email_sample">yandex@yandex.ru</string>
+    <string name="forgot_email_sample">Почта</string>
     <string name="forgot_send_link">Отправить ссылку</string>
     <string name="forgot_back_to_login">Вернуться ко входу</string>
+    <string name="verify_title">Загляните в почту</string>
+    <string name="verify_subtitle">
+Мы отправили код на
+<font fgcolor="#FF1E3A38">yandex@yandex.ru</font>
+. Он действует 10 минут.
+</string>
+    <string name="verify_resend_timer">Отправить код ещё раз через 0:42</string>
+    <string name="btn_confirm">Подтвердить</string>
+    <string name="verify_wrong_email">Не та почта?</string>
+    <string name="btn_change_email">Изменить</string>
+    <string name="home_address">ул. Студенческая, 12, кв. 34</string>
+    <string name="home_title">Квитанции ЖКХ</string>
+    <string name="home_hero_label">К оплате за ноябрь</string>
+    <string name="home_due_chip">до 25 ноя</string>
+    <string name="home_open_receipt">Открыть квитанцию</string>
+    <string name="home_readings_title">Передайте показания счётчиков</string>
+    <string name="home_readings_subtitle">до 23 числа каждого месяца</string>
+    <string name="home_chart_title">Последние 6 месяцев</string>
+    <string name="home_chart_average">в среднем 4 480 ₽</string>
+    <string name="home_month_oct">Октябрь 2026</string>
+    <string name="home_paid_oct">оплачено 12 окт</string>
+    <string name="home_amount_oct">4 720 ₽</string>
+    <string name="home_month_sep">Сентябрь 2026</string>
+    <string name="home_paid_sep">оплачено 10 сен</string>
+    <string name="home_amount_sep">4 390 ₽</string>
+    <string name="home_status_paid">Оплачено</string>
+    <string name="home_nav_main">Главная</string>
+    <string name="home_nav_stats">Итоги</string>
+    <string name="home_nav_readings">Показания</string>
+    <string name="home_nav_profile">Профиль</string>
+    <string name="home_cd_notifications">Уведомления</string>
+    <string name="home_cd_camera">Сфотографировать квитанцию</string>
 </resources>

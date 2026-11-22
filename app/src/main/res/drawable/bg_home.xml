@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/welcome_background" />
+        </shape>
+    </item>
+    <!-- бирюзовое свечение сверху-слева -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.22"
+                android:centerY="0.12"
+                android:endColor="@color/welcome_glow_transparent"
+                android:gradientRadius="70%p"
+                android:startColor="@color/welcome_glow"
+                android:type="radial" />
+        </shape>
+    </item>
+    <!-- розоватое пятно справа -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.97"
+                android:centerY="0.68"
+                android:endColor="@color/welcome_rose_transparent"
+                android:gradientRadius="45%p"
+                android:startColor="@color/welcome_rose"
+                android:type="radial" />
+        </shape>
+    </item>
+    <!-- бирюзовое свечение снизу-слева -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.05"
+                android:centerY="0.9"
+                android:endColor="@color/welcome_glow_transparent"
+                android:gradientRadius="50%p"
+                android:startColor="@color/welcome_glow"
+                android:type="radial" />
+        </shape>
+    </item>
+</layer-list>

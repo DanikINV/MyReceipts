@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_home"
+    tools:context=".HomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/dp_150">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== Шапка ===== -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_44"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        style="@style/HomeTextAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_address" />
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        style="@style/HomeTextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="@string/home_title" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btnNotifications"
+                    android:layout_width="@dimen/round_button_size"
+                    android:layout_height="@dimen/round_button_size"
+                    android:layout_gravity="end|top"
+                    android:layout_marginTop="@dimen/dp_49"
+                    android:layout_marginEnd="@dimen/dp_24"
+                    android:background="@drawable/bg_home_circle"
+                    android:contentDescription="@string/home_cd_notifications"
+                    android:elevation="@dimen/dp_4"
+                    android:src="@drawable/ic_home_bell"
+                    android:tint="@color/ink" />
+            </FrameLayout>
+
+            <!-- ===== Карточка «К оплате» ===== -->
+            <LinearLayout
+                android:id="@+id/cardHero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_14"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:background="@drawable/bg_home_hero"
+                android:elevation="@dimen/dp_4"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/dp_21"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingEnd="@dimen/dp_21"
+                android:paddingBottom="@dimen/dp_20">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_28"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvHeroLabel"
+                        style="@style/HomeTextHeroLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/home_hero_label" />
+
+                    <TextView
+                        android:id="@+id/tvDueChip"
+                        style="@style/HomeTextDue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_28"
+                        android:background="@drawable/bg_home_due_chip"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_12"
+                        android:paddingEnd="@dimen/dp_12"
+                        android:text="@string/home_due_chip" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvHeroAmount"
+                    style="@style/HomeTextHeroAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/amount_total" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnOpenReceipt"
+                    style="@style/HomePrimaryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:text="@string/home_open_receipt" />
+            </LinearLayout>
+
+            <!-- ===== Передайте показания ===== -->
+            <LinearLayout
+                android:id="@+id/cardReadings"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_68"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:background="@drawable/bg_home_card"
+                android:elevation="@dimen/dp_4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dp_17"
+                android:paddingEnd="@dimen/dp_22">
+
+                <FrameLayout
+                    android:layout_width="@dimen/dp_38"
+                    android:layout_height="@dimen/dp_38"
+                    android:background="@drawable/bg_home_tile">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_home_drop"
+                        android:tint="@color/teal"
+                        tools:ignore="ContentDescription" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/HomeTextCardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_readings_title" />
+
+                    <TextView
+                        style="@style/HomeTextCardSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_1"
+                        android:text="@string/home_readings_subtitle" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@drawable/ic_home_chevron"
+                    android:tint="@color/home_chevron"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <!-- ===== График: последние 6 месяцев ===== -->
+            <LinearLayout
+                android:id="@+id/cardChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_14"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:background="@drawable/bg_home_card"
+                android:elevation="@dimen/dp_4"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/dp_19"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingEnd="@dimen/dp_19"
+                android:paddingBottom="@dimen/dp_17">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/HomeTextSectionTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/home_chart_title" />
+
+                    <TextView
+                        style="@style/HomeTextSectionNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_chart_average" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_81"
+                    android:layout_marginTop="@dimen/dp_19"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_51"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_home_bar" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_43"
+                    android:layout_weight="1"
+                android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/bg_home_bar" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_56"
+                    android:layout_weight="1"
+                android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/bg_home_bar" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_63"
+                    android:layout_weight="1"
+                android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/bg_home_bar" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_67"
+                    android:layout_weight="1"
+                android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/bg_home_bar" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_81"
+                    android:layout_weight="1"
+                android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/bg_home_bar_active" />
+                </LinearLayout>
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardOctober"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_74"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:background="@drawable/bg_home_card"
+            android:elevation="@dimen/dp_4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingEnd="@dimen/dp_15">
+
+            <FrameLayout
+                android:layout_width="@dimen/tile_size"
+                android:layout_height="@dimen/tile_size"
+                android:background="@drawable/bg_home_tile_receipt">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_home_receipt"
+                    android:tint="@color/home_icon_dark"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/HomeTextMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_month_oct" />
+
+                <TextView
+                    style="@style/HomeTextCardSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="@string/home_paid_oct" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/HomeTextMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_amount_oct" />
+
+                <TextView
+                    style="@style/HomeTextPaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:background="@drawable/bg_home_paid_chip"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_12"
+                    android:text="@string/home_status_paid" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardSeptember"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_74"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:background="@drawable/bg_home_card"
+            android:elevation="@dimen/dp_4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingEnd="@dimen/dp_15">
+
+            <FrameLayout
+                android:layout_width="@dimen/tile_size"
+                android:layout_height="@dimen/tile_size"
+                android:background="@drawable/bg_home_tile_receipt">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_home_receipt"
+                    android:tint="@color/home_icon_dark"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/HomeTextMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_month_sep" />
+
+                <TextView
+                    style="@style/HomeTextCardSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="@string/home_paid_sep" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/HomeTextMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_amount_sep" />
+
+                <TextView
+                    style="@style/HomeTextPaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:background="@drawable/bg_home_paid_chip"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_12"
+                    android:text="@string/home_status_paid" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ===== Нижняя навигация ===== -->
+    <FrameLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_77"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_26"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_70"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_home_nav"
+            android:elevation="@dimen/dp_6"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_6"
+            android:paddingEnd="@dimen/dp_6">
+
+            <LinearLayout
+                android:id="@+id/navMain"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_14">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:src="@drawable/ic_home_nav_home"
+                    android:tint="@color/teal"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/HomeTextNavActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:text="@string/home_nav_main" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/navStats"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_14">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:src="@drawable/ic_home_nav_stats"
+                    android:tint="@color/home_nav_inactive"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/HomeTextNavInactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:text="@string/home_nav_stats" />
+            </LinearLayout>
+
+            <!-- место под кнопку камеры -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/navReadings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_14">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:src="@drawable/ic_home_drop"
+                    android:tint="@color/home_nav_inactive"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/HomeTextNavInactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:text="@string/home_nav_readings" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/navProfile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_14">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:src="@drawable/ic_home_nav_profile"
+                    android:tint="@color/home_nav_inactive"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/HomeTextNavInactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:text="@string/home_nav_profile" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Кнопка камеры -->
+        <FrameLayout
+            android:id="@+id/btnCamera"
+            android:layout_width="@dimen/dp_58"
+            android:layout_height="@dimen/dp_58"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@drawable/bg_home_fab"
+            android:contentDescription="@string/home_cd_camera"
+            android:elevation="@dimen/dp_10">
+
+            <ImageView
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_28"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_home_camera"
+                android:tint="@color/ink"
+                tools:ignore="ContentDescription" />
+        </FrameLayout>
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/welcome_screen"
@@ -8,7 +9,6 @@
     android:background="@drawable/bg_welcome"
     tools:context=".WelcomeActivity">
 
-    <!--Иллюстрация: карточка квитанции-->
     <FrameLayout
         android:id="@+id/illustration"
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
         android:clipToPadding="false"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!--Карточка-->
         <LinearLayout
             android:id="@+id/receiptCard"
             android:layout_width="@dimen/dp_272"
@@ -61,7 +60,6 @@
                 android:text="@string/receipt_date"
                 tools:ignore="HardcodedText" />
 
-            <!--Строки услуг-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_32"
@@ -151,14 +149,12 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <!--Разделитель-->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_1"
                 android:layout_marginTop="@dimen/dp_12"
                 android:background="@color/receipt_divider" />
 
-            <!--Итого-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -183,7 +179,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!--Кнопка-камера-->
         <FrameLayout
             android:layout_width="@dimen/dp_64"
             android:layout_height="@dimen/dp_64"
@@ -200,7 +195,6 @@
                 tools:ignore="ContentDescription" />
         </FrameLayout>
 
-        <!--Плашка «Оплата не пропущена»-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_56"
@@ -237,10 +231,9 @@
         </LinearLayout>
     </FrameLayout>
 
-    <!--Заголовок-->
-<TextView
-    style="@style/MyReceiptsTextHeadline"
+    <TextView
         android:id="@+id/tvTitle"
+        style="@style/MyReceiptsTextHeadline"
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_24"
@@ -253,10 +246,9 @@
         app:layout_constraintTop_toBottomOf="@id/illustration"
         tools:ignore="HardcodedText" />
 
-    <!--Подзаголовок-->
-<TextView
-    style="@style/MyReceiptsTextBody"
+    <TextView
         android:id="@+id/tvSubtitle"
+        style="@style/MyReceiptsTextBody"
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_24"
@@ -269,12 +261,9 @@
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         tools:ignore="HardcodedText" />
 
-    <!--Кнопка «Создать аккаунт»-->
-
-    <!--«У меня уже есть аккаунт»-->
-<androidx.appcompat.widget.AppCompatButton
-    style="@style/MyReceiptsTextButton"
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCreateAccount"
+        style="@style/MyReceiptsTextButton"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_56"
         android:layout_marginStart="@dimen/dp_24"
@@ -293,8 +282,8 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        style="@style/MyReceiptsTextSecondaryAction"
         android:id="@+id/btnHaveAccount"
+        style="@style/MyReceiptsTextSecondaryAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dp_24"

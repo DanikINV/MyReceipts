@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_verify"
+    tools:context=".VerifyEmailActivity">
+
+    <!-- ===== Кнопка «Назад» ===== -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        style="@style/RoundButton"
+        android:layout_width="@dimen/round_button_size"
+        android:layout_height="@dimen/round_button_size"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_56"
+        android:contentDescription="@string/cd_back"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ===== Круг с конвертом ===== -->
+    <FrameLayout
+        android:id="@+id/mailBadge"
+        android:layout_width="@dimen/dp_84"
+        android:layout_height="@dimen/dp_84"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_120"
+        android:background="@drawable/bg_verify_circle"
+        android:elevation="@dimen/dp_6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_mail"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+
+    <!-- ===== Заголовок ===== -->
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/MyReceiptsTextHeadline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_22"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:text="@string/verify_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mailBadge" />
+
+    <!-- ===== Подзаголовок ===== -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        style="@style/MyReceiptsTextBody"
+        android:lineSpacingExtra="@dimen/dp_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:text="@string/verify_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- ===== Поля для кода ===== -->
+    <LinearLayout
+        android:id="@+id/codeRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_28"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+        <EditText
+            android:id="@+id/code1"
+            tools:text="4"
+            style="@style/CodeCell"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_61"
+            android:layout_weight="1"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields" />
+
+        <EditText
+            android:id="@+id/code2"
+            tools:text="8"
+            style="@style/CodeCell"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_61"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/code_cell_gap"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields" />
+
+        <EditText
+            android:id="@+id/code3"
+            tools:text="2"
+            style="@style/CodeCell"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_61"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/code_cell_gap"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields" />
+
+        <EditText
+            android:id="@+id/code4"
+            style="@style/CodeCell"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_61"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/code_cell_gap"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields">
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/code5"
+            style="@style/CodeCell"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_61"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/code_cell_gap"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields" />
+
+        <EditText
+            android:id="@+id/code6"
+            style="@style/CodeCell"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_61"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/code_cell_gap"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields" />
+    </LinearLayout>
+
+    <!-- ===== Таймер повторной отправки ===== -->
+    <TextView
+        android:id="@+id/tvResendTimer"
+        style="@style/Text.Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_18"
+        android:text="@string/verify_resend_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/codeRow" />
+
+    <!-- ===== Кнопка «Подтвердить» ===== -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfirm"
+        style="@style/VerifyPrimaryButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:text="@string/btn_confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvResendTimer" />
+
+    <!-- ===== «Не та почта? Изменить» ===== -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            style="@style/MyReceiptsTextSecondaryAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/verify_wrong_email" />
+
+        <TextView
+            android:id="@+id/btnChangeEmail"
+            style="@style/Text.LinkAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_6"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/btn_change_email" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

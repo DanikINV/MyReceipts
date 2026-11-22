@@ -75,4 +75,27 @@
     <color name="mr_blob_mint_70_end">#00A7F1EA</color>
     <color name="mr_blob_turquoise_60_start">#997BEADF</color>
     <color name="mr_blob_turquoise_60_end">#007BEADF</color>
+    <color name="code_border_focused">#3EC8B9</color>
+    <color name="surface_code_focused">#EAF8F6</color>
+    <color name="text_accent">#1E8E83</color>
+    <color name="home_hero_start">#FFE6DDDA</color>
+    <color name="home_hero_end">#FFF2DAD8</color>
+    <color name="home_hero_label">#FF8E6A68</color>
+    <color name="home_due_bg">#FFF8ECEA</color>
+    <color name="home_due_text">#FFB04F4B</color>
+    <color name="home_tile">#FFA7F1EA</color>
+    <color name="home_bar_light">#FFA7F1EA</color>
+    <color name="home_bar_active">#FF7BEADF</color>
+    <color name="home_chevron">#FF9DBFBA</color>
+    <color name="home_icon_dark">#FF1F4F4B</color>
+    <color name="home_nav_inactive">#FF8FB0AC</color>
+    <color name="mr_blob_mint_start">#8CD3F8F4</color>
+    <color name="mr_blob_mint_end">#00D3F8F4</color>
+    <color name="bg_base">#FFEFFCFA</color>
+    <color name="glow_pink">#D9F8D5D3</color>
+    <color name="glow_pink_end">#00F8D5D3</color>
+    <color name="glow_teal">#997BEADF</color>
+    <color name="glow_teal_end">#007BEADF</color>
+    <color name="surface_card">#FFF3FBF9</color>
+    <color name="text_primary">#FF1F3A38</color>
 </resources>
