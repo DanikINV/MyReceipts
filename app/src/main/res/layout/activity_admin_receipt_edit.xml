@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Экран 3 (админ): редактирование всех данных квитанции -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.MeReceipts.Screen"
+    tools:context=".admin.AdminReceiptEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            style="@style/Widget.MeReceipts.IconButton"
+            android:contentDescription="@string/action_back"
+            android:src="@drawable/ic_arrow_back" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnHistory"
+            style="@style/Widget.MeReceipts.IconButton"
+            android:contentDescription="@string/receipt_history_link"
+            android:src="@drawable/ic_history" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/space_lg"
+            android:paddingBottom="@dimen/space_lg">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/receipt_edit_title"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Title" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:text="@string/receipt_edit_subtitle"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Caption" />
+
+            <!-- Основное -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:text="@string/section_main"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Headline" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAddress"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAccount"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_account_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPayer"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_payer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCompany"
+                style="@style/Widget.MeReceipts.Input.Dropdown"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_company">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/acCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPeriod"
+                    style="@style/Widget.MeReceipts.Input"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/field_period">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPeriod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDueDate"
+                    style="@style/Widget.MeReceipts.Input"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/space_md"
+                    android:layout_weight="1"
+                    android:hint="@string/field_due_date">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDueDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Суммы по услугам -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:text="@string/section_services"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Headline" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilHeating"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/service_heating"
+                app:suffixText="@string/currency_suffix">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etHeating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilWater"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/service_water"
+                app:suffixText="@string/currency_suffix">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etWater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilElectricity"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/service_electricity"
+                app:suffixText="@string/currency_suffix">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etElectricity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilGas"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/service_gas"
+                app:suffixText="@string/currency_suffix">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Итого: считается в коде как сумма полей выше -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MeReceipts.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_lg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/receipt_total_label"
+                        android:textAppearance="@style/TextAppearance.MeReceipts.Body" />
+
+                    <TextView
+                        android:id="@+id/tvTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.MeReceipts.Amount"
+                        tools:text="4 650 ₽" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Оплата -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:text="@string/section_payment"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Headline" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilStatus"
+                style="@style/Widget.MeReceipts.Input.Dropdown"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_payment_status">
+
+                <!-- Варианты: status_unpaid / status_paid -->
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/acStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:text="@string/status_unpaid" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        style="@style/Widget.MeReceipts.Button"
+        android:text="@string/action_save" />
+</LinearLayout>

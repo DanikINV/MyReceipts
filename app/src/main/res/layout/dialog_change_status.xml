@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bottom sheet менеджера: ручная смена статуса оплаты (BottomSheetDialogFragment) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/screen_padding"
+    android:paddingTop="@dimen/space_md"
+    android:paddingEnd="@dimen/screen_padding"
+    android:paddingBottom="@dimen/space_xl">
+
+    <View
+        android:layout_width="@dimen/sheet_handle_width"
+        android:layout_height="@dimen/sheet_handle_height"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_sheet_handle" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_lg"
+        android:text="@string/dialog_status_title"
+        android:textAppearance="@style/TextAppearance.MeReceipts.Headline" />
+
+    <TextView
+        android:id="@+id/tvReceiptSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:textAppearance="@style/TextAppearance.MeReceipts.Caption"
+        tools:text="ул. Студенческая, 12, кв. 34 · Ноябрь 2026 · 4 650 ₽" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_md"
+        android:text="@string/dialog_status_hint"
+        android:textAppearance="@style/TextAppearance.MeReceipts.Caption" />
+
+    <RadioGroup
+        android:id="@+id/rgStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_md">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbUnpaid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/icon_button_size"
+            android:text="@string/status_unpaid"
+            android:textAppearance="@style/TextAppearance.MeReceipts.Body" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbPaid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/icon_button_size"
+            android:text="@string/status_paid"
+            android:textAppearance="@style/TextAppearance.MeReceipts.Body" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilComment"
+        style="@style/Widget.MeReceipts.Input"
+        android:layout_marginTop="@dimen/space_md"
+        android:hint="@string/dialog_status_comment_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="3" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirm"
+        style="@style/Widget.MeReceipts.Button"
+        android:layout_marginTop="@dimen/space_lg"
+        android:text="@string/dialog_status_confirm" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancel"
+        style="@style/Widget.MeReceipts.Button.Text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_xs"
+        android:text="@string/action_cancel" />
+</LinearLayout>

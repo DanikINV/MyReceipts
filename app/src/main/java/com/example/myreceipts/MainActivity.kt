@@ -13,12 +13,16 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ViewFlipper
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myreceipts.data.AppPreferences
+import com.example.myreceipts.data.AppDatabase
+import com.example.myreceipts.data.AppRepository
 
 class MainActivity : AppCompatActivity() {
     private companion object {
@@ -35,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var screens: ViewFlipper
     private lateinit var preferences: AppPreferences
+    private lateinit var repository: AppRepository
     private var indicatorAnimator: ValueAnimator? = null
     private var isTransitioning = false
     private var loginReturnScreen = SCREEN_REGISTER
@@ -42,6 +47,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         preferences = AppPreferences(this)
+        repository = AppRepository(this)
+        AppDatabase(this).initialize().close()
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         screens = findViewById(R.id.screens)
@@ -50,6 +57,13 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             view.setPadding(systemBars.left, 0, systemBars.right, 0)
             insets
+        }
+
+        preferences.getSession()?.userId?.toLongOrNull()?.let(repository::getUser)?.let { user ->
+            if (user.role == "admin" || user.role == "manager") {
+                openStaffWorkspace(user.id)
+                return
+            }
         }
 
         val hasSession = preferences.getSession() != null
@@ -125,6 +139,10 @@ class MainActivity : AppCompatActivity() {
         login.findViewById<View>(R.id.btnBack)?.setOnClickListener {
             showScreen(loginReturnScreen)
         }
+        setupAuthentication(login, register)
+        screens.findViewById<View>(R.id.btnCamera)?.setOnClickListener {
+            startActivity(android.content.Intent(this, ScanReceiptActivity::class.java))
+        }
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -154,6 +172,79 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         indicatorAnimator?.cancel()
         super.onDestroy()
+    }
+
+    private fun setupAuthentication(login: View, register: View) {
+        val session = preferences.getSession()
+        if (session != null) populateHome(session.userId.toLongOrNull())
+
+        login.findViewById<View>(R.id.btnLogin).setOnClickListener {
+            val email = login.findViewById<EditText>(R.id.etEmail).text.toString()
+            val password = login.findViewById<EditText>(R.id.etPassword).text.toString()
+
+            val user = repository.authenticate(email, password)
+            if (user == null) {
+                Toast.makeText(
+                    this,
+                    "Неверный email или пароль",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+
+            preferences.saveSession(user.id.toString(), user.email, user.role)
+            if (user.role == "admin" || user.role == "manager") {
+                openStaffWorkspace(user.id)
+            } else {
+                populateHome(user.id)
+                showScreen(SCREEN_HOME)
+            }
+        }
+
+        register.findViewById<View>(R.id.btnCreate).setOnClickListener {
+            val name = register.findViewById<EditText>(R.id.etName).text.toString()
+            val email = register.findViewById<EditText>(R.id.etEmail).text.toString()
+            val password = register.findViewById<EditText>(R.id.etPassword).text.toString()
+
+            try {
+                val user = repository.registerResident(name, email, password)
+                preferences.saveSession(user.id.toString(), user.email, user.role)
+                populateHome(user.id)
+                showScreen(SCREEN_HOME)
+            } catch (error: Exception) {
+                Toast.makeText(this, error.message ?: "Не удалось создать аккаунт", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun populateHome(userId: Long?) {
+        val home = screens.findViewById<View>(R.id.cardHero)?.rootView ?: return
+        val summary = userId?.let(repository::loadResidentSummary)
+
+        home.findViewById<TextView>(R.id.tvAddress)?.text =
+            summary?.address ?: getString(R.string.home_address)
+        home.findViewById<TextView>(R.id.tvTitle)?.text =
+            summary?.period?.let { "Квитанция за $it" } ?: getString(R.string.home_title)
+        home.findViewById<TextView>(R.id.tvHeroAmount)?.text =
+            summary?.let {
+                val rubles = it.totalKop / 100
+                val kopeks = it.totalKop % 100
+                "$rubles ₽ ${"%02d".format(kopeks)}"
+            } ?: getString(R.string.amount_total)
+        home.findViewById<TextView>(R.id.tvDueChip)?.text =
+            when (summary?.status) {
+                "paid" -> "Оплачено"
+                "unpaid" -> "К оплате"
+                else -> getString(R.string.home_due_chip)
+            }
+    }
+
+    private fun openStaffWorkspace(userId: Long) {
+        startActivity(
+            android.content.Intent(this, StaffMainActivity::class.java)
+                .putExtra("staff_user_id", userId)
+        )
+        finish()
     }
 
     private fun showNextOnboardingPage(targetPage: Int) {

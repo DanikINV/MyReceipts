@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Экран 2 (админ): создание / редактирование аккаунта менеджера -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.MeReceipts.Screen"
+    tools:context=".admin.AdminManagerEditActivity">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        style="@style/Widget.MeReceipts.IconButton"
+        android:contentDescription="@string/action_back"
+        android:src="@drawable/ic_arrow_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/space_lg"
+            android:paddingBottom="@dimen/space_lg">
+
+            <!-- В коде: manager_edit_title_new или manager_edit_title_edit -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/manager_edit_title_new"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Title" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_sm"
+                android:text="@string/manager_edit_subtitle"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Caption" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilName"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_xl"
+                android:hint="@string/field_full_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPhone"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCompany"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_company">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPassword"
+                style="@style/Widget.MeReceipts.Input"
+                android:layout_marginTop="@dimen/space_md"
+                android:hint="@string/field_temp_password"
+                app:helperText="@string/field_temp_password_helper"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_lg"
+                android:checked="true"
+                android:minHeight="@dimen/icon_button_size"
+                android:text="@string/manager_active_switch"
+                android:textAppearance="@style/TextAppearance.MeReceipts.Body" />
+
+            <!-- Только в режиме редактирования: visibility = visible -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnResetPassword"
+                style="@style/Widget.MeReceipts.Button.Outlined"
+                android:layout_marginTop="@dimen/space_lg"
+                android:text="@string/manager_reset_password"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/Widget.MeReceipts.Button.Danger"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/space_sm"
+                android:text="@string/manager_delete"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        style="@style/Widget.MeReceipts.Button"
+        android:text="@string/manager_save_create" />
+</LinearLayout>

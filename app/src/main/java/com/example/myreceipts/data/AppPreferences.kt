@@ -5,7 +5,8 @@ import android.content.SharedPreferences
 
 data class UserSession(
     val userId: String,
-    val email: String?
+    val email: String?,
+    val role: String?
 )
 
 class AppPreferences(context: Context) {
@@ -24,11 +25,12 @@ class AppPreferences(context: Context) {
         get() = preferences.getString(KEY_THEME_MODE, THEME_SYSTEM) ?: THEME_SYSTEM
         set(value) = preferences.edit().putString(KEY_THEME_MODE, value).apply()
 
-    fun saveSession(userId: String, email: String? = null) {
+    fun saveSession(userId: String, email: String? = null, role: String? = null) {
         require(userId.isNotBlank()) { "userId must not be blank" }
         preferences.edit()
             .putString(KEY_SESSION_USER_ID, userId)
             .putString(KEY_SESSION_EMAIL, email)
+            .putString(KEY_SESSION_ROLE, role)
             .apply()
     }
 
@@ -36,13 +38,18 @@ class AppPreferences(context: Context) {
         val userId = preferences.getString(KEY_SESSION_USER_ID, null)
             ?.takeIf(String::isNotBlank)
             ?: return null
-        return UserSession(userId, preferences.getString(KEY_SESSION_EMAIL, null))
+        return UserSession(
+            userId,
+            preferences.getString(KEY_SESSION_EMAIL, null),
+            preferences.getString(KEY_SESSION_ROLE, null)
+        )
     }
 
     fun clearSession() {
         preferences.edit()
             .remove(KEY_SESSION_USER_ID)
             .remove(KEY_SESSION_EMAIL)
+            .remove(KEY_SESSION_ROLE)
             .apply()
     }
 
@@ -53,6 +60,7 @@ class AppPreferences(context: Context) {
         const val KEY_THEME_MODE = "theme_mode"
         const val KEY_SESSION_USER_ID = "session_user_id"
         const val KEY_SESSION_EMAIL = "session_email"
+        const val KEY_SESSION_ROLE = "session_role"
         const val THEME_SYSTEM = "system"
     }
 }

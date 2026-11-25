@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Круглая полупрозрачная кнопка; selected = включено (например, вспышка) -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/camera_button_fill_active" />
+            <stroke android:width="@dimen/stroke_width" android:color="@color/camera_stroke" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/camera_button_fill" />
+            <stroke android:width="@dimen/stroke_width" android:color="@color/camera_stroke" />
+        </shape>
+    </item>
+</selector>
